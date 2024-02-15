@@ -22,6 +22,9 @@ namespace NetDiag
         readonly string[] domains = new string[] { "google.com", "bing.com", "duckduckgo.com", "youtube.com" };
         private void killmy_self()
         {
+            // This is horrible, horrible code
+            // Don't really care, compiles and runs
+
             Thread.Sleep(1000);
             Ping pingReq = new Ping();
 
@@ -76,11 +79,12 @@ namespace NetDiag
                         networkCondition = "Excellent";
                     else if (averageLatency > 45d)
                         networkCondition = "Decent";
-                    else if (averageLatency > 70d)
-                        networkCondition = "Poor";
-                    else if (averageLatency > 120d)
-                        networkCondition = "Horrible";
                 }
+
+                if (averageLatency > 70d)
+                    networkCondition = "Poor";
+                else if (averageLatency > 120d)
+                    networkCondition = "Horrible";
 
                 MessageBox.Show("The diagnostic has completed. The results are as follows:\n\n" +
                     $"Average Latency: {averageLatency}ms.\n" +
