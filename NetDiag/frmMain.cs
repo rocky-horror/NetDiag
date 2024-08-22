@@ -20,10 +20,11 @@ namespace NetDiag
         }
 
         readonly string[] domains = new string[] { "google.com", "bing.com", "duckduckgo.com", "youtube.com" };
-        private void killmy_self()
+        private void stupidstupidcode()
         {
             // This is horrible, horrible code
             // Don't really care, compiles and runs
+            // Naming conventions are fucked here, who cares idgaf even anymore
 
             Thread.Sleep(1000);
             Ping pingReq = new Ping();
@@ -96,7 +97,7 @@ namespace NetDiag
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            new Thread(killmy_self).Start();
+            new Thread(stupidstupidcode).Start();
         }
     }
 }
